@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "j+Tw+qtNgiLlke1DaNMiK+XeNSyghEBtU/Snkn5+BFQ2w2zYKHN/DzclqjG058GYALnHsFvqBS+T2pLPqhM5Cg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\webar\\Documents\\GitHub\\CurrencyTestApp\\CurrencyTestApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\webar\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512"
+  ],
+  "logs": []
+}
