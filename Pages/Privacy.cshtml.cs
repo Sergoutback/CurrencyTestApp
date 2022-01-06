@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Globalization;
 
 namespace CurrencyTestApp.Pages
 {
@@ -12,8 +14,11 @@ namespace CurrencyTestApp.Pages
             _logger = logger;
         }
 
+        
         public void OnGet()
         {
+            string dateTime = DateTime.Now.ToString("d", new CultureInfo("en-US"));
+            ViewData["TimeStamp"] = dateTime;
         }
     }
 }

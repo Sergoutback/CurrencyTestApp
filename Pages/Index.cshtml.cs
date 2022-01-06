@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace CurrencyTestApp.Pages
 {
@@ -19,6 +20,9 @@ namespace CurrencyTestApp.Pages
 
         public void OnGet()
         {
+            decimal InitialCurrentValue = 0;
+            ViewData["CurrentValueNow"] = InitialCurrentValue;
+            ViewData["Currency"] = "USD";
 
         }
     }

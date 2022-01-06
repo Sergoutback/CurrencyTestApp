@@ -1,10 +1,96 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Currency Wallet";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Hello World!</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Multi Currency Wallet</h1>
+    <p>webart2013.com <a href="https://webart2013.com">FUNNY AND USEFUL APPS</a>.</p>
 </div>
+
+<div class="text-left">
+    <h3 class="display-4">You have:</h3>    
+    <textarea id="TextArea1" rows="1" cols="20">@ViewData["CurrentValueNow"] "rub"</textarea>
+    <input id="Button1" type="button" value="button" />
+</div>
+
+<div class="text-left">
+    <h3 class="display-4">Exchange:</h3>
+    <h4 class="display-4"><p>@ViewData["CurrentValueNow"] @ViewData["Currency"].</p></h4>
+</div>
+
+
+<html xmlns="https://localhost:44313/">
+<head>
+    <title>Button Example</title>
+    <script language="C#" runat="server">
+
+        void SubmitBtn_Click(Object sender, EventArgs e)
+        {
+            Message.Text = "Hello World!!";
+        }
+
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <h3>Button Example</h3>
+
+        Click on the submit button.<br /><br />
+
+        <asp:Button id="Button1"
+                    Text="Submit"
+                    OnClick="SubmitBtn_Click"
+                    runat="server" />
+
+        <br />
+
+        <asp:label id="Message" runat="server" />
+
+    </form>
+</body>
+
+
+<head runat="server">
+    <title>ButtonType Example</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <h3>ButtonType Example</h3>
+
+        <asp:label id="Message"
+                   forecolor="Red"
+                   runat="server"
+                   AssociatedControlID="AuthorsGridView" />
+
+        <!-- Populate the Fields collection declaratively. -->
+        <asp:gridview id="AuthorsGridView"
+                      datasourceid="AuthorsSqlDataSource"
+                      autogeneratecolumns="false"
+                      onrowcommand="AuthorsGridView_RowCommand"
+                      runat="server">
+
+            <columns>
+
+                <asp:buttonfield buttontype="Link" commandname="Select" text="Select" />
+                <asp:boundfield datafield="au_lname" headertext="au_lname" />
+                <asp:boundfield datafield="au_fname" headertext="au_fname" />
+
+            </columns>
+
+        </asp:gridview>
+
+        <!-- This example uses Microsoft SQL Server and connects -->
+        <!-- to the Pubs sample database.                        -->
+        <asp:sqldatasource id="AuthorsSqlDataSource"
+                           selectcommand="SELECT [au_lname], [au_fname] FROM [authors]"
+                           connectionstring="server=localhost;database=pubs;integrated security=SSPI"
+                           runat="server">
+        </asp:sqldatasource>
+
+    </form>
+</body>
+</html>
